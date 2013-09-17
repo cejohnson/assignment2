@@ -24,14 +24,36 @@
     <%= f.datetime_select :ends_at %>
   </div>
   <div class="field">
-    <%= f.label :all_day %><br />
-    <%= f.check_box :all_day %>
+    <%= f.label :children %><br />
+    <ul class="names-list">
+      <% @children.each do |child| %>
+        <li>
+          <%= check_box_tag "children[]", child %>
+          <%= child %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="field">
+    <label>Parent(s) Responsible</label><br />
+    <ul class="names-list">
+      <% @parents.each do |parent| %>
+        <li>
+          <%= check_box_tag "parents[]", parent %>
+          <%= parent %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Event', :class => "btn-blue" %>
   </div>
 <% end %>

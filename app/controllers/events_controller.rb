@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
-  def index   
+  def index
     # full_calendar will hit the index method with query parameters
     # 'start' and 'end' in order to filter the results for the
     # appropriate month/week/day.  It should be possiblt to change
     # this to be starts_at and ends_at to match rails conventions.
     # I'll eventually do that to make the demo a little cleaner.
-    @events = Event.scoped  
+    @events = Event.scoped
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
@@ -34,6 +34,8 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new
+    @children = ["John", "Paul", "George", "Ringo"]
+    @parents = ["Mike", "Linda"]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +51,16 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
+    puts "\n\n\n" + params[:event].inspect + "\n\n\n"
     @event = Event.new(params[:event])
+    @event.children = ""
+    params[:children].each do |child|
+      @event.children = @event.children + child + " "
+    end
+    @event.parents = ""
+    params[:parents].each do |parent|
+      @event.parents = @event.parents + parent + " "
+    end
 
     respond_to do |format|
       if @event.save
@@ -70,7 +81,7 @@ class EventsController < ApplicationController
   # viv la REST!
   def update
     @event = Event.find(params[:id])
-    
+
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
