@@ -39,6 +39,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.2.8)
     rack-mount (0.6.14)
@@ -53,6 +54,11 @@ GEM
       activesupport (= 3.0.7)
       bundler (~> 1.0)
       railties (= 3.0.7)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.2)
     railties (3.0.7)
       actionpack (= 3.0.7)
       activesupport (= 3.0.7)
@@ -70,6 +76,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pg (= 0.15.1)
   rails (= 3.0.7)
+  rails_12factor (= 0.0.2)
   rake (= 0.8.7)
   sqlite3
