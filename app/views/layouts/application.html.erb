@@ -19,12 +19,10 @@
 
 </head>
 <body>
-  <div id="container">
-    <%= link_to "View All Events", events_path, :class => "btn-creme" %>
-    <%= link_to "New Event", new_event_path, :class => "btn-blue" %>
-
-    <%= yield %>
+  <div id="outer-container">
+    <div id="inner-container">
+      <%= yield %>
+    </div>
   </div>
-
 </body>
 </html>

@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @event.title %></h1>
 
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
+<p id="notice"><%= notice %></p>
 
 <p>
   <b>Starts at:</b>
@@ -36,6 +33,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Delete', @event, :confirm => 'Are you sure?', :method => :delete %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), :class => "btn btn-blue"%> |
+<%= link_to 'Delete', @event, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-red" %> |
+<%= link_to 'Back', events_path, :class => "btn btn-creme" %>

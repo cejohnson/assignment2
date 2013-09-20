@@ -1,11 +1,5 @@
 body {
-	margin-top: 40px;
-	#text-align: center;
-	font-size: 14px;
-	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-  max-height: 960px;
-  max-width: 640px;
-  margin: 0 auto;
+  background: #000000;
 }
 
 #calendar {
@@ -13,6 +7,20 @@ body {
 	margin: 0 auto;
 }
 
+
+.btn {
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:18px;
+    font-weight:bold;
+    padding:6px 12px;
+    text-decoration:none;
+}
 
 .btn-blue {
 
@@ -30,19 +38,7 @@ body {
 
     background-color:#33bdef;
 
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-
     border:1px solid #057fd0;
-
-    display:inline-block;
-    color:#ffffff;
-    font-family:arial;
-    font-size:15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
 
     text-shadow:1px 1px 1px #5b6178;
 
@@ -82,20 +78,8 @@ body {
 
     background-color:#eae0c2;
 
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-
     border:1px solid #333029;
     /*border:1px solid #057fd0;*/
-
-    display:inline-block;
-    color:#ffffff;
-    font-family:arial;
-    font-size:15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
 
     text-shadow:1px 1px 1px #5b6178;
 
@@ -135,19 +119,7 @@ body {
 
     background-color:#d0451b;
 
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-
     border:1px solid #942911;
-
-    display:inline-block;
-    color:#ffffff;
-    font-family:arial;
-    font-size:15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
 
     text-shadow:1px 1px 1px #5b6178;
 
@@ -169,10 +141,26 @@ body {
     top:1px;
 }
 
-
-div#container {
+div#outer-container {
+  height: 960px;
+  width: 640px;
   margin: 0 auto;
-  max-width: 440px;
+  background: #ffffff;
+}
+div#inner-container {
+  margin-top: 40px;
+  #text-align: center;
+  font-size: 18px;
+  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+  width: 600px;
+  margin: 0 auto;
+}
+
+div#bottom-nav {
+  margin: 20px auto;
+  text-align: center;
+  border-top: 1px solid gray;
+  padding-top: 20px;
 }
 
 ul.names-list {
@@ -187,4 +175,16 @@ ul.names-list li {
 
 div.field label{
   font-weight: bold;
+}
+
+div#calendar {
+  padding-top: 20px;
+}
+
+td {
+    min-height: 120px;
+}
+
+h1 {
+    text-align: center;
 }

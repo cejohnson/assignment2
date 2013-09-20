@@ -46,6 +46,8 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @children = ["John", "Paul", "George", "Ringo"]
+    @parents = ["Mike", "Linda"]
   end
 
   # POST /events

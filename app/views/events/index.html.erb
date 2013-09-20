@@ -5,7 +5,6 @@
       <tr>
         <th>Event</th>
         <th>Starts at</th>
-        <th>Ends at</th>
         <th>Children</th>
         <th>Responsibility</th>
         <th></th>
@@ -17,15 +16,19 @@
       <tr>
         <td><%= event.title %></td>
         <td><%= event.starts_at %></td>
-        <td><%= event.ends_at %></td>
         <td><%= event.children %></td>
         <td><%= event.parents %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to 'Show', event, :class => "btn btn-creme" %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), :class => "btn btn-blue" %></td>
+        <td><%= link_to 'Delete', event, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-red" %></td>
       </tr>
     <% end %>
     </table>
 <% else %>
     <h4>No Events</h4>
 <% end %>
+
+<div id="bottom-nav">
+    <%= link_to "View Calendar", root_path, :class => "btn btn-creme" %>
+    <%= link_to "New Event", new_event_path, :class => "btn btn-blue" %>
+</div>
